@@ -17,10 +17,7 @@ const server = http.createServer(async (req, res) => {
             try {
                 const request = JSON.parse(body);
 
-                await fs.writeFile(
-                    './temporary.json',
-                    JSON.stringify(request, null, 4),
-                );
+                await fs.writeFile('./temporary.json', JSON.stringify(request, null, 4));
 
                 await saveToDatabase(request);
 
